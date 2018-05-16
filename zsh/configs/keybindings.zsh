@@ -18,3 +18,6 @@ bindkey "^Q" push-line-or-edit
 # Bind Up and Down arrow keys to searching through history
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word

@@ -152,3 +152,4 @@ alias kubetail="$HOME/Documents/projects/kubetail/kubetail"
   alias eng="cd $HOME/Documents/projects/cds/engine"
   alias rst="cd $HOME/Documents/projects/cds/resolver-tools"
   alias cli="cd $GOPATH/src/github.concur.com/client-data-services/cli"
+  alias gce="git clean -xdf && cp ~/.secrets/cds/engine/.envrc ./" # git clean engine
