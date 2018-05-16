@@ -26,7 +26,11 @@ alias rs="cd $HOME/Documents/projects/receipt-service"
 alias or="cd $HOME/Documents/projects/orchestration"
 alias pj="cd $HOME/Documents/projects"
 alias awsd="cd $HOME/Documents/projects/aws-tooling"
-alias n="cd $HOME/Drive/Notes"
+if [[ -d "$HOME/Google\ Drive" ]]; then
+  alias n="cd $HOME/Google\ Drive/Notes"
+elif [[ -d "$HOME/Drive" ]]; then
+  alias n="cd $HOME/Drive/Notes"
+fi
 
 ## Environment Aliases
 alias envup='while read p; do

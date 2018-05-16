@@ -2,10 +2,10 @@
 
 # Grab Nova iTerm Theme
 # https://trevordmiller.com/projects/nova
-if [[ ! -f "$HOME/.iterm/themes/nova.itermcolors" ]]; then
-  curl -fLo $HOME/.iterm/themes/nova.itermcolors --create-dirs \
-    https://raw.githubusercontent.com/trevordmiller/nova-iterm/master/build/nova.itermcolors
-fi
+# if [[ ! -f "$HOME/.iterm/themes/nova.itermcolors" ]]; then
+#   curl -fLo $HOME/.iterm/themes/nova.itermcolors --create-dirs \
+#     https://raw.githubusercontent.com/trevordmiller/nova-iterm/master/build/nova.itermcolors
+# fi
 
 # Grab Pure Prompt
 # https://github.com/sindresorhus/pure

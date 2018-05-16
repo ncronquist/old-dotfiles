@@ -373,7 +373,12 @@ augroup go
 augroup END
 
 " ==================== fzf ============================
-set rtp+=/usr/local/opt/fzf
+if has('unix')
+    set rtp+=/usr/bin/fzf
+elseif has('macunix')
+    set rtp+=/usr/local/opt/fzf
+endif
+
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 map <C-p> :Files<CR>
 

@@ -18,7 +18,11 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'Raimondi/delimitMate'
 Plug 'corylanou/vim-present', {'for' : 'present'}
-Plug '/usr/local/bin/fzf'
+if has('unix')
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+elseif has('macunix')
+    Plug '/usr/local/bin/fzf'
+endif
 Plug 'junegunn/fzf.vim'
 Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
 Plug 'elzr/vim-json', {'for' : 'json'}

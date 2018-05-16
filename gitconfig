@@ -8,7 +8,7 @@
     pager = less -+$LESS -R
 [commit]
     template = ~/.gitmessage
-    gpgsign = true
+    ; gpgsign = true
 [fetch]
     prune = true
 [rebase]
