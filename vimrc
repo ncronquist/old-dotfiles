@@ -14,7 +14,7 @@ filetype plugin indent on
 set laststatus=2
 set encoding=utf-8              " Set default encoding to UTF-8
 set autoread                    " Automatically reread changed files without asking me anything
-set autoindent                  
+set autoindent
 set backspace=indent,eol,start  " Makes backspace key more powerful.
 set incsearch                   " Shows the match while typing
 set hlsearch                    " Highlight found searches
@@ -33,7 +33,7 @@ set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 set noshowmatch                 " Do not show matching brackets by flickering
 set noshowmode                  " We show the mode with airline or lightline
 set ignorecase                  " Search case insensitive...
-set smartcase                   " ... but not it begins with upper case 
+set smartcase                   " ... but not it begins with upper case
 set completeopt=menu,menuone
 set nocursorcolumn              " speed up syntax highlighting
 set nocursorline
@@ -63,12 +63,7 @@ endif
 syntax enable
 set t_Co=256
 
-" .vimrc_background is created by base16-shell
-if filereadable(expand("~/.vimrc_background"))
-  set background=dark
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
+colorscheme nova
 
 " open help vertically
 command! -nargs=* -complete=help Help vertical belowright help <args>
@@ -76,7 +71,7 @@ autocmd FileType help wincmd L
 
 " filetypes
 
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
 autocmd BufNewFile,BufRead *.ino setlocal noet ts=4 sw=4 sts=4
 autocmd BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
@@ -95,18 +90,20 @@ augroup END
 
 "=====================================================
 "===================== STATUSLINE ====================
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 let s:modes = {
-      \ 'n': 'NORMAL', 
-      \ 'i': 'INSERT', 
-      \ 'R': 'REPLACE', 
-      \ 'v': 'VISUAL', 
-      \ 'V': 'V-LINE', 
+      \ 'n': 'NORMAL',
+      \ 'i': 'INSERT',
+      \ 'R': 'REPLACE',
+      \ 'v': 'VISUAL',
+      \ 'V': 'V-LINE',
       \ "\<C-v>": 'V-BLOCK',
       \ 'c': 'COMMAND',
-      \ 's': 'SELECT', 
-      \ 'S': 'S-LINE', 
-      \ "\<C-s>": 'S-BLOCK', 
+      \ 's': 'SELECT',
+      \ 'S': 'S-LINE',
+      \ "\<C-s>": 'S-BLOCK',
       \ 't': 'TERMINAL'
       \}
 
@@ -157,7 +154,7 @@ set statusline=
 
 " mode with custom colors
 set statusline+=%#myModeColor#
-set statusline+=%{StatusLineMode()}               
+set statusline+=%{StatusLineMode()}
 set statusline+=%*
 
 " left information bar (after mode)
@@ -185,6 +182,10 @@ set statusline+=\ %*
 " With a map leader it's possible to do extra key combinations
 " i.e: <leader>w saves the current file
 let mapleader="\<SPACE>"
+
+" Airline mappers
+:nnoremap <Tab> :bnext<CR>
+:nnoremap <S-Tab> :bprevious<CR>
 
 " Some useful quickfix shortcuts for quickfix
 map <C-n> :cn<CR>
@@ -214,11 +215,17 @@ nnoremap <leader>pr :Runtime<CR>
 " Close all but the current one
 nnoremap <leader>o :only<CR>
 
+" Better splitting
+" Creates splits like tmux except with leader key instead of prefix
+nnoremap <leader>- :split<CR>
+nnoremap <leader>\| :vsplit<CR>
+
 " Better split switching
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+" Switches splits like tmux except with leader key instead of prefix
+nnoremap <leader>j <C-W>j
+nnoremap <leader>k <C-W>k
+nnoremap <leader>h <C-W>h
+nnoremap <leader>l <C-W>l
 
 " Print full path
 map <C-f> :echo expand("%:p")<cr>
@@ -318,9 +325,6 @@ let g:go_gocode_unimported_packages = 1
 let g:go_autodetect_gopath = 1
 let g:go_info_mode = "guru"
 
-" let g:go_metalinter_autosave = 1
-" let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-
 let g:go_highlight_space_tab_error = 0
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
@@ -368,27 +372,17 @@ augroup go
   autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 augroup END
 
-" ==================== CtrlP ====================
-let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_switch_buffer = 'et'     " jump to a file if it's open already
-let g:ctrlp_mruf_max=450             " number of recently opened files
-let g:ctrlp_max_files=0              " do not limit the number of searchable files
-let g:ctrlp_use_caching = 1
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
-let g:ctrlp_match_window = 'bottom,order:btt,max:10,results:10'
-let g:ctrlp_buftag_types = {'go' : '--language-force=go --golang-types=ftv'}
-
-nmap <C-b> :CtrlPCurWD<cr>
-imap <C-b> <esc>:CtrlPCurWD<cr>
+" ==================== fzf ============================
+set rtp+=/usr/local/opt/fzf
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+map <C-p> :Files<CR>
 
 " ==================== delimitMate ====================
-let g:delimitMate_expand_cr = 1   
-let g:delimitMate_expand_space = 1    
-let g:delimitMate_smart_quotes = 1    
-let g:delimitMate_expand_inside_quotes = 0    
-let g:delimitMate_smart_matchpairs = '^\%(\w\|\$\)'   
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 1
+let g:delimitMate_smart_quotes = 1
+let g:delimitMate_expand_inside_quotes = 0
+let g:delimitMate_smart_matchpairs = '^\%(\w\|\$\)'
 
 imap <expr> <CR> pumvisible() ? "\<c-y>" : "<Plug>delimitMateCR"
 
@@ -399,8 +393,14 @@ noremap <Leader>f :NERDTreeFind<cr>
 
 let NERDTreeShowHidden=1
 
+" ==================== NerdCommenter ====================
+let g:NERDSpaceDelims = 1         " Add spaces after comment delimiters by default
+let g:NERDDefaultAlign = 'left'   " Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDCommentEmptyLines = 1   " Allow commenting and inverting empty lines (useful when commenting a region)
+
 " ==================== Ag ====================
-let g:ackprg = 'ag --vimgrep --smart-case'                                                   
+let g:ackprg = 'ag --vimgrep --smart-case'
+
 " ==================== vim-json ====================
 let g:vim_json_syntax_conceal = 0
 
@@ -409,5 +409,3 @@ nmap  -  <Plug>(choosewin)
 
 " Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
-" vim: sw=2 sw=2 et

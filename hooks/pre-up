@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Grap Nova iTerm Theme
+# Grab Nova iTerm Theme
 # https://trevordmiller.com/projects/nova
 if [[ ! -f "$HOME/.iterm/themes/nova.itermcolors" ]]; then
   curl -fLo $HOME/.iterm/themes/nova.itermcolors --create-dirs \

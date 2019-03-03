@@ -1,18 +1,24 @@
 [push]
-  default = current
+    default = current
 [color]
-  ui = auto
+    ui = auto
 [core]
-  excludesfile = ~/.gitignore
-  autocrlf = input
-[merge]
-  ff = only
+    excludesfile = ~/.gitignore
+    autocrlf = input
+    pager = less -+$LESS -R
 [commit]
-  template = ~/.gitmessage
+    template = ~/.gitmessage
 [fetch]
-  prune = true
+    prune = true
 [rebase]
-  autosquash = true
+    autosquash = true
 [user]
-	email = nick.cronquist@sap.com
-	name = Nick Cronquist
+    email = nick@ncronquist.com
+    name = Nick Cronquist
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[url "ssh://git@github.concur.com"]
+    insteadof = https://github.concur.com

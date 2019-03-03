@@ -1,18 +1,8 @@
 #!/usr/bin/env bash
 
-# Remove Base16 Shell color scripts
-if [[ -d "$HOME/.config/base16-shell" ]]; then
-  rm -rf "$HOME/.config/base16-shell"
-fi
-
-# Remove base16 Theme
-if [[ -L "$HOME/.base16_theme" ]]; then
-  rm -rf "$HOME/.base16_theme"
-fi
-
-# Remove base16_background
-if [[ -f "$HOME/.vimrc_background" ]]; then
-  rm -rf "$HOME/.vimrc_background"
+# Remove Nova theme
+if [[ -f "$HOME/.iterm/themes/nova.itermcolors" ]]; then
+  rm -rf "$HOME/.iterm/themes/nova.itermcolors"
 fi
 
 # Remove Pure Prompt

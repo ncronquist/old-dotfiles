@@ -18,12 +18,15 @@ Install
 
 Verify the following are installed for your OS `command -v [command]`:
 
-1. [git][git]
-2. [rcm][rcm]
-3. [tmux][tmux]
-4. [neovim][neovim]
-5. [ag][ag]
-6. [tig][tig]
+1. [git]
+2. [rcm]
+3. [tmux]
+4. [neovim]
+5. [ag]
+6. [tig]
+7. [ranger]
+8. [highlight]
+9. [fzf]
 
 [git]: https://git-scm.com/
 [rcm]: https://github.com/thoughtbot/rcm/
@@ -31,6 +34,9 @@ Verify the following are installed for your OS `command -v [command]`:
 [neovim]: https://neovim.io/
 [ag]: https://geoff.greer.fm/ag/
 [tig]: https://jonas.github.io/tig/
+[ranger]: https://ranger.github.io/
+[highlight]: http://www.andre-simon.de/doku/highlight/en/highlight.php
+[fzf]: https://github.com/junegunn/fzf
 
 Once you've verfied the above are installed, clone this repository to your
 machine:
@@ -70,7 +76,9 @@ $ rcdn -v
 Terminal Theme
 --------------
 
-I use [nova][nova] to set my terminal theme. The first time you run `rcup` and relaunch your terminal, you will need to set your theme. You will only have to do this once.
+I use [nova] to set my terminal theme. The first time you run `rcup` and relaunch your terminal, you will need to set your theme. You will only have to do this once.
+
+### OSX
 
 To set the theme in iTerm:
 
@@ -99,24 +107,31 @@ Shift + i
 Vim Plugins
 -----------
 
-Vim plugins are managed with [Plug][plug].
+Vim plugins are managed with [Plug].
 
-[plug]: https://github.com/junegunn/vim-plug
+[Plug]: https://github.com/junegunn/vim-plug
 
 
 Thanks
 ------
 
-This dotfiles repo was originally forked from [@dragan](@dragan) and has 
-been tweaked for my particular preferences.
+This dotfiles repo was originally forked from [@dragan] and has
+been tweaked for my particular preferences. Currently, there is no intention
+to keep this repo up to date with the original project or to contribute
+back to the original project since the changes are really just preferences
+and not related to the actual functionality or usability of the project.
+
+Thanks to Dale for this great project and for getting me started on my
+dotfiles journey!
 
 [@dragan]: https://github.com/dragan/dotfiles
+
 
 License
 -------
 
-Released under the [MIT License][mit-license]. See [LICENSE][license] for more
+Released under the [MIT License]. See [LICENSE] for more
 information.
 
-[mit-license]: http://www.opensource.org/licenses/mit-license.php
-[license]: https://github.com/ncronquist/dotfiles/blob/master/LICENSE
+[MIT License]: http://www.opensource.org/licenses/mit-license.php
+[LICENSE]: https://github.com/ncronquist/dotfiles/blob/master/LICENSE
