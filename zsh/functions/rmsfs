@@ -1,0 +1,10 @@
+# Remove a string from a string
+# Arg1: Original String
+# Arg2: String to remove from original
+
+rmsfs() {
+    local original_string=$1
+    local string_to_remove=$2
+
+    echo $original_string | sed -e "s/$(echo $string_to_remove | sed 's/\//\\\//g')//"
+}
