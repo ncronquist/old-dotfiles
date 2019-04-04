@@ -73,7 +73,8 @@ alias kc_impl_eu="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-impl-eu-v112-co
 alias kc_rqa2="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-rqa2-us-v112-config"
 alias kc_rqa3="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-rqa3-us-v112-config"
 alias kc_babou="export KUBECONFIG=$HOME/Documents/projects/stack-nick/clusters/babou/.assets/nick-preview-us-west-2/nick-preview-babou-config"
-alias kc_scipian="export KUBECONFIG=$HOME/.kube/scipian-config"
+alias kc_scipian_personal="export KUBECONFIG=$HOME/.kube/scipian-config"
+alias kc_scipian_admin="export KUBECONFIG=$HOME/.secrets/scipian/stack/scipian-preview-alden-config"
 alias gkc="grep 'content\:  \"\" => \"apiVersion\:' | cut -c 19- | xargs printf"
 
 ## Project Specific Aliases
