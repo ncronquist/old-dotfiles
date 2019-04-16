@@ -49,7 +49,9 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
-  decorations: buttonless
+  decorations: none
+  # Mac OS
+  # decorations: buttonless
 
   # When true, alacritty starts maximized.
   start_maximized: true
@@ -491,13 +493,17 @@ key_bindings:
   - { key: Left,     mods: Alt,     chars: "\x1b[1;3D"                       }
   - { key: Left,                    chars: "\x1b[D",        mode: ~AppCursor }
   - { key: Left,                    chars: "\x1bOD",        mode: AppCursor  }
-  - { key: Left,     mods: Control|Shift, command: { program: "/usr/local/bin/tmux", args: ["swap-window", "-t", "-1"] } }
+  # Mac OS
+  # - { key: Left,     mods: Control|Shift, command: { program: "/usr/local/bin/tmux", args: ["swap-window", "-t", "-1"] } }
+  - { key: Left,     mods: Control|Shift, command: { program: "/usr/bin/tmux", args: ["swap-window", "-t", "-1"] } }
   - { key: Right,    mods: Shift,   chars: "\x1b[1;2C"                       }
   - { key: Right,    mods: Control, chars: "\x1b[1;5C"                       }
   - { key: Right,    mods: Alt,     chars: "\x1b[1;3C"                       }
   - { key: Right,                   chars: "\x1b[C",        mode: ~AppCursor }
   - { key: Right,                   chars: "\x1bOC",        mode: AppCursor  }
-  - { key: Right,    mods: Control|Shift, command: { program: "/usr/local/bin/tmux", args: ["swap-window", "-t", "+1"] } }
+  # Mac OS
+  # - { key: Right,    mods: Control|Shift, command: { program: "/usr/local/bin/tmux", args: ["swap-window", "-t", "+1"] } }
+  - { key: Right,    mods: Control|Shift, command: { program: "/usr/bin/tmux", args: ["swap-window", "-t", "+1"] } }
   - { key: Up,       mods: Shift,   chars: "\x1b[1;2A"                       }
   - { key: Up,       mods: Control, chars: "\x1b[1;5A"                       }
   - { key: Up,       mods: Alt,     chars: "\x1b[1;3A"                       }
