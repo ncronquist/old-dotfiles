@@ -44,5 +44,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'trevordmiller/nova-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-rooter'
+Plug 'jparise/vim-graphql'
 
 call plug#end()
