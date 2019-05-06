@@ -64,6 +64,7 @@ syntax enable
 set t_Co=256
 
 colorscheme nova
+" colorscheme onehalflight
 
 " open help vertically
 command! -nargs=* -complete=help Help vertical belowright help <args>
