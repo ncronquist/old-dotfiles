@@ -8,5 +8,5 @@ mps() {
     fi
 
     export MIX_ENV="$env"
-    mix phoenix.server
+    mix phx.server
 }
