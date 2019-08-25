@@ -9,6 +9,7 @@ alias stripcolors="perl -pe 's/\e\[?.*?[\@-~]//g'"
 alias pcat='bat --theme=OneHalfDark'
 alias ping='prettyping --nolegend'
 alias preview="fzf --preview 'bat --color \"always\" {}'"
+alias clip='xclip -selection c'
 
 ## Editor
 alias vim='nvim'
