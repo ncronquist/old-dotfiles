@@ -66,6 +66,7 @@ alias kc_prev_us="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-preview-us-v112
 alias kc_prev_eu="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-preview-eu-v112-config"
 alias kc_prev_cn="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-preview-cn-v112-config"
 alias kc_prod_us="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-production-us-v112-config"
+alias kc_prod_us_b="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-production-us-v112b-config"
 alias kc_prod_eu="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-production-eu-v112-config"
 alias kc_prod_cn="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-production-cn-v112-config"
 alias kc_impl_us="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-impl-us-v112-config"

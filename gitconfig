@@ -22,7 +22,7 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
-[url "ssh://git@github.concur.com"]
-    insteadof = https://github.concur.com
 [gpg]
     program = gpg
+[url "ssh://git@github.concur.com"]
+	insteadof = https://github.concur.com

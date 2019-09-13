@@ -1,0 +1,15 @@
+cds-list() {
+    local package_name="$1"
+    cds list \
+    rqa2 \
+    rqa3 \
+    impl-eu \
+    impl-us \
+    preview-cn \
+    preview-eu \
+    preview-us \
+    production-cn \
+    production-eu \
+    production-us \
+    -t engineer | grep -E "$package_name|PACKAGE NAME|---"
+}

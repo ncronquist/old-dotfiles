@@ -1,0 +1,18 @@
+dirdiff() {
+    local dir1=$1
+    local dir2=$2
+
+    diff \
+    --recursive \
+    --minimal \
+    --ignore-all-space \
+    --ignore-blank-lines \
+    --side-by-side \
+    --suppress-blank-empty \
+    --suppress-common-lines \
+    --color \
+    --exclude='.git' \
+    --exclude='.DS_Store' \
+    $dir1 \
+    $dir2
+}

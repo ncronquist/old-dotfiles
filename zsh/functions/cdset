@@ -4,8 +4,7 @@
 
 cdset() {
     git clean -xdf
-    mkdir -p ~/Documents/projects/cds/engine/packages/prod-host/graphql-packages
-    cp -r ~/Documents/projects/nicks-test-packages/graphql-profile ~/Documents/projects/cds/engine/packages/prod-host/graphql-packages
     lerna bootstrap
+    cp -r ~/Documents/projects/nicks-test-packages/graphql-profile ~/Documents/projects/cds/engine/packages/prod-host/node_modules/@cds/
 }
 
