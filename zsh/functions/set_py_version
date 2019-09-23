@@ -1,0 +1,15 @@
+# Run an Elixir Phoenix Server with a specified MIX_ENV
+
+set_py_version() {
+    local py_version="$1"
+
+    if [ "$py_version" == '3' ]; then
+        sudo ln -sfn /usr/bin/python3.6 /usr/bin/python
+        sudo ln -sfn /usr/bin/pip3 /usr/bin/pip
+    elif [ "$py_version" == '2' ]; then
+        sudo ln -sfn /usr/bin/python2.7 /usr/bin/python
+        sudo ln -sfn /usr/bin/pip2 /usr/bin/pip
+    else
+        echo "Must provide valid python version: 2 or 3"
+    fi
+}
