@@ -63,7 +63,7 @@ endif
 syntax enable
 set t_Co=256
 
-colorscheme nova
+colorscheme default
 
 " open help vertically
 command! -nargs=* -complete=help Help vertical belowright help <args>
