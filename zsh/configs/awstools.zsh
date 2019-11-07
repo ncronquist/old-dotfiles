@@ -1,3 +1,3 @@
-if [[ -f "$HOME/Documents/projects/aws-tooling/scripts/awstools.sh" ]]; then
-    . $HOME/Documents/projects/aws-tooling/scripts/awstools.sh
+if [[ -f "$HOME/Documents/projects/awstools/bxaws" ]]; then
+    source $HOME/Documents/projects/awstools/bxaws
 fi

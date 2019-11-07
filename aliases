@@ -19,7 +19,7 @@ alias vi='nvim'
 alias zshconfig="nvim ~/.zshrc"
 alias reload="source $HOME/.zshrc"
 alias my_ip="ipconfig getifaddr en0" # Need to come up with a way to get ip address that works on both linux and mac os
-alias srv="python -m SimpleHTTPServer \$1" # Simple, but awesome python http server; If you're working with a static http page, you can use this to serve it rather than viewing the file directly in the browser; The final parameter allows you to specifiy a port
+alias srv="python3 -m http.server \$1" # Simple, but awesome python http server; If you're working with a static http page, you can use this to serve it rather than viewing the file directly in the browser; The final parameter allows you to specifiy a port
 alias run_postgres='docker run --name postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres' # Runs a postgres docker container with un/pw = postgres and the default port exposed
 
 ## Directory Aliases
@@ -77,6 +77,10 @@ alias kc_rqa2="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-rqa2-us-v112-confi
 alias kc_rqa3="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-rqa3-us-v112-config"
 alias kc_babou="export KUBECONFIG=$HOME/Documents/projects/stack-nick/clusters/babou/.assets/nick-preview-us-west-2/nick-preview-babou-config"
 alias kc_scipian="export KUBECONFIG=$HOME/.kube/scipian-config"
+
+# Terraform
+alias tf='terraform'
+alias s='sentinel'
 
 ## Project Specific Aliases
 
