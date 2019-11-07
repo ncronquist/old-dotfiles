@@ -8,15 +8,13 @@
     pager = less -+$LESS -R
 [commit]
     template = ~/.gitmessage
-    ; gpgsign = true
 [fetch]
     prune = true
 [rebase]
     autosquash = true
 [user]
-    email = nick.cronquist@sap.com
-    name = Nick Cronquist
-    signingkey = B66BD69D768E40E1
+    email = nicholas.cronquist@blackstone.com
+    name = Nicholas Cronquist
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
@@ -24,5 +22,3 @@
     required = true
 [url "ssh://git@github.concur.com"]
     insteadof = https://github.concur.com
-[gpg]
-    program = gpg

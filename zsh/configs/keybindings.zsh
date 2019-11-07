@@ -15,9 +15,5 @@ bindkey "^Y" accept-and-hold
 bindkey "^N" insert-last-word
 bindkey "^Q" push-line-or-edit
 
-# Bind Up and Down arrow keys to searching through history
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
-
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
