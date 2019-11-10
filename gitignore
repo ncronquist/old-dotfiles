@@ -1,8 +1,2 @@
 .DS_Store
-log/*.log
-tags
-!tags/
-tmp/**/*
-!tmp/cache/.keep
-node_modules
 .env*

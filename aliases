@@ -2,148 +2,67 @@
 # Aliases
 #===============================================================================
 
-## Shell Commands
+# Shell Commands
 alias l='ls --color=always -Aoh --time-style=long-iso'
-alias ls='ls --color=always'
 alias stripcolors="perl -pe 's/\e\[?.*?[\@-~]//g'"
 alias pcat='bat --theme=OneHalfDark'
-alias ping='prettyping --nolegend'
+alias pping='prettyping --nolegend'
 alias preview="fzf --preview 'bat --color \"always\" {}'"
-alias clip='xclip -selection c'
 
-## Editor
+# TODO: Create a section for OS specific aliases
+# alias clip='xclip -selection c'
+# alias my_ip="ipconfig getifaddr en0" # Need to come up with a way to get ip address that works on both linux and mac os
+
+# Editor
 alias vim='nvim'
 alias vi='nvim'
 
-## Random
-alias zshconfig="nvim ~/.zshrc"
+# Random
 alias reload="source $HOME/.zshrc"
-alias my_ip="ipconfig getifaddr en0" # Need to come up with a way to get ip address that works on both linux and mac os
 alias srv="python3 -m http.server \$1" # Simple, but awesome python http server; If you're working with a static http page, you can use this to serve it rather than viewing the file directly in the browser; The final parameter allows you to specifiy a port
 alias run_postgres='docker run --name postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres' # Runs a postgres docker container with un/pw = postgres and the default port exposed
 
-## Directory Aliases
-alias rs="cd $HOME/Documents/projects/receipt-service"
-alias or="cd $HOME/Documents/projects/orchestration"
+# Directory Aliases
 alias pj="cd $HOME/Documents/projects"
-alias awsd="cd $HOME/Documents/projects/aws-tooling"
 if [[ -d "$HOME/Google\ Drive" ]]; then
   alias n="cd $HOME/Google\ Drive/Notes"
 elif [[ -d "$HOME/Drive" ]]; then
   alias n="cd $HOME/Drive/Notes"
 fi
 
-## Environment Aliases
-alias envup='while read p; do
-              export $(eval echo $p)
-            done <.env'
-alias envup2='export $(cat .env)'
+# Tool Aliases
+  ## Git Aliases
+  alias gs="git status"
+  alias gd="git branch -D"
+  alias grb="git rebase"
+  alias gp="git push"
+  alias gfp="git push -f"
+  alias gcm="git checkout master && git pull && git pull origin master"
+  alias gb="git branch"
+  alias gco="git checkout"
+  alias gba="git branch -a"
+  alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+  alias gcb="~/.scripts/git-branch-cleanup.sh"
 
-# Vagrant Aliases
-alias vup='vagrant up --provider virtualbox'
-alias vd='vagrant destroy -f'
-alias vsh='vagrant ssh'
-alias vstatus='vagrant status'
+  ## Docker Aliases
+  alias docker_rm_exited='docker rm $(docker ps -q -f status=exited)'
+  alias docker_clear_images='docker rmi -f $(docker images -q)'
 
-# Git Aliases
-alias gs="git status"
-alias gd="git branch -D"
-alias grb="git rebase"
-alias gp="git push"
-alias gfp="git push -f"
-alias gcm="git checkout master && git pull && git pull origin master"
-alias gb="git branch"
-alias gco="git checkout"
-alias gba="git branch -a"
-alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-alias gcb="~/.scripts/git-branch-cleanup.sh"
+  ## Kubectl
+  alias kc='kubectl'
+  alias kcg='kubectl get'
+  alias kks='kubectl --namespace=kube-system'
+  alias kubetail="$HOME/Documents/projects/kubetail/kubetail"
 
-# Docker Aliases
-alias docker_rm_exited='docker rm $(docker ps -q -f status=exited)'
-alias docker_clear_images='docker rmi -f $(docker images -q)'
+  ## Terraform
+  alias tf='terraform'
+  alias s='sentinel'
 
-# Kubectl
-alias kc='kubectl'
-alias kcg='kubectl get'
-alias kks='kubectl --namespace=kube-system'
-alias kubetail="$HOME/Documents/projects/kubetail/kubetail"
-alias kc_prev_us="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-preview-us-v112-config"
-alias kc_prev_eu="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-preview-eu-v112-config"
-alias kc_prev_cn="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-preview-cn-v112-config"
-alias kc_prod_us="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-production-us-v112-config"
-alias kc_prod_eu="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-production-eu-v112-config"
-alias kc_prod_cn="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-production-cn-v112-config"
-alias kc_rqa2="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-rqa2-us-v112-config"
-alias kc_rqa3="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-rqa3-us-v112-config"
-alias kc_babou="export KUBECONFIG=$HOME/Documents/projects/stack-nick/clusters/babou/.assets/nick-preview-us-west-2/nick-preview-babou-config"
-alias kc_scipian="export KUBECONFIG=$HOME/.kube/scipian-config"
+# Language Specific Aliases
 
-# Terraform
-alias tf='terraform'
-alias s='sentinel'
-
-## Project Specific Aliases
-
-  ### Receipt Service
-  alias rw='npm run dev:watch-logs api consumer'
-  alias rr='npm run dev:restart api consumer && npm run dev:watch-logs api consumer'
-  alias rtest='npm run dev:run-test'
-  alias rci='npm run dev:run-ci'
-  alias rrhard='docker-compose kill -s SIGKILL && docker-compose rm -f --all && docker rmi -f $(docker images -q receiptservice_api) && sudo rm -rf $HOME/data/db && npm run dev:start'
-  alias rdestroy='docker-compose kill -s SIGKILL && docker-compose rm -f --all && docker rmi -f $(docker images -q receiptservice_api) && sudo rm -rf $HOME/data/db'
-  # alias dclear_receipts='docker rm $(docker ps -q -f status=exited) && docker rmi -f $(docker images -q receiptservice_api)'
-  alias rmimgs='for f in $HOME/Documents/projects/receipt-service/receipt-images/*.png; do sudo rm "$f"; done'
-
-  alias getUser="$HOME/Documents/projects/receipt-service/src/tools/getUserInfo.sh"
-
-    # Request Tool Get Aliases
-    alias gl="$REQUEST get local"
-    alias gd5="$REQUEST get dev5"
-    alias gd6="$REQUEST get dev6"
-    alias gd7="$REQUEST get dev7"
-    alias gqd="$REQUEST get qa_dev"
-    alias gqp="$REQUEST get qa_prod"
-    alias gqp4="$REQUEST get qa_prod4"
-    alias g3_2c="$REQUEST get rqa3_2c"
-
-    # Request Tool Post Aliases
-    alias pl="$REQUEST post local"
-    alias pl_real="$HOME/Drive/Notes/Concur/technical/curl_commands/receipts/archive/local_real.sh"
-    alias pd5="$REQUEST post dev5"
-    alias pd6="$REQUEST post dev6"
-    alias pd7="$REQUEST post dev7"
-    alias pqd="$REQUEST post qa_dev"
-    alias pqp="$REQUEST post qa_prod"
-    alias pqp4="$REQUEST post qa_prod4"
-    alias p3_2c="$REQUEST post rqa3_2c"
-    alias p3_2c_real="$HOME/Drive/Notes/Concur/technical/curl_commands/receipts/archive/rqa3_real.sh"
-
-    # Request Tool PostForm Aliases
-    alias pfl="$REQUEST postForm local"
-    alias pfd5="$REQUEST postForm dev5"
-    alias pfd6="$REQUEST postForm dev6"
-    alias pfd7="$REQUEST postForm dev7"
-    alias pfqd="$REQUEST postForm qa_dev"
-    alias pfqp="$REQUEST postForm qa_prod"
-    alias pf3_2c="$REQUEST postForm rqa3_2c"
-
-  ### Orchestration
+  ## Elixir
   alias mc='mix compile --force --warnings-as-errors'
   alias mdgc='mix do deps.get, deps.compile'
   alias mt='export MIX_ENV=test && mix test'
-  alias mtf='export MIX_ENV=test && mix do compile, test'
   alias check='mix do dogma, credo --strict --all'
   alias mci='export MIX_ENV=test && mix do credo --strict --all, test'
-  alias mbd='mix absinthe.schema.json ./schema.json && ./node_modules/.bin/graphdoc --force --schema ./schema.json --output ./priv/docs && sed -i -- "s/\.doc\.html//g" ./priv/docs/*.html'
-  alias mrebuild="export MIX_ENV=prod && rm -rf ./deps && rm -rf ./node_modules && npm install && mix do deps.get, deps.compile && mix compile --force --warnings-as-errors && ./node_modules/brunch/bin/brunch build --production"
-
-  ### CDS
-  alias eng="cd $HOME/Documents/projects/cds/engine"
-  alias rst="cd $HOME/Documents/projects/cds/resolver-tools"
-  alias cli="cd $HOME/Documents/projects/cds/cli"
-  alias cdsl="$HOME/Documents/projects/cds/cli/bin/darwin/cds"
-  alias cdsemul="$HOME/Documents/projects/cds/engine/packages/emulator/src/cli/bin/em.js"
-
-  ### Scipian
-  alias scp="cd $GOPATH/src/github.com/scipian"
-  alias scpt="cd $GOPATH/src/github.com/scipian/terraform-controller"
