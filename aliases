@@ -66,17 +66,9 @@ alias docker_clear_images='docker rmi -f $(docker images -q)'
 alias kc='kubectl'
 alias kcg='kubectl get'
 alias kks='kubectl --namespace=kube-system'
+
 alias kubetail="$HOME/Documents/projects/kubetail/kubetail"
-alias kc_prev_us="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-preview-us-v112-config"
-alias kc_prev_eu="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-preview-eu-v112-config"
-alias kc_prev_cn="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-preview-cn-v112-config"
-alias kc_prod_us="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-production-us-v112-config"
-alias kc_prod_eu="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-production-eu-v112-config"
-alias kc_prod_cn="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-production-cn-v112-config"
-alias kc_rqa2="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-rqa2-us-v112-config"
-alias kc_rqa3="export KUBECONFIG=$HOME/.secrets/cds/stack/cds-rqa3-us-v112-config"
-alias kc_babou="export KUBECONFIG=$HOME/Documents/projects/stack-nick/clusters/babou/.assets/nick-preview-us-west-2/nick-preview-babou-config"
-alias kc_scipian="export KUBECONFIG=$HOME/.kube/scipian-config"
+alias kc_performance="export KUBECONFIG=$HOME/.secrets/platform_engineering/k8s-configs/performance.config"
 
 # Terraform
 alias tf='terraform'
