@@ -1,0 +1,20 @@
+# kns function
+#
+# Calling this function with no arguments will
+# run `kubectl get namespace`
+#
+# Calling this function with a namespace value
+# as the first argument will run kubectl with
+# that specified namespace and then the rest
+# of the arguments
+
+kns() {
+  if [[ -n "$1" ]]; then
+    local namespace="$1"
+    shift 1
+    kubectl --namespace="$namespace" $@
+  else
+    kubectl get ns
+  fi
+}
+
