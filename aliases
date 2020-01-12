@@ -76,6 +76,9 @@ alias s='sentinel'
 
 ## Project Specific Aliases
 
+  ### BWS
+  alias bwsl='python3 $HOME/Documents/projects/bws/bws/cli.py'
+
   ### Receipt Service
   alias rw='npm run dev:watch-logs api consumer'
   alias rr='npm run dev:restart api consumer && npm run dev:watch-logs api consumer'
@@ -132,7 +135,6 @@ alias s='sentinel'
   ### CDS
   alias eng="cd $HOME/Documents/projects/cds/engine"
   alias rst="cd $HOME/Documents/projects/cds/resolver-tools"
-  alias cli="cd $HOME/Documents/projects/cds/cli"
   alias cdsl="$HOME/Documents/projects/cds/cli/bin/darwin/cds"
   alias cdsemul="$HOME/Documents/projects/cds/engine/packages/emulator/src/cli/bin/em.js"
 

@@ -1,3 +1,8 @@
 # Programs installed with pip and the --user flag are
 # installed to ~/.local/bin
 export PATH=$HOME/.local/bin:$PATH
+
+# Pipenv
+# https://pipenv.kennethreitz.org/
+eval "$(pipenv --completion)"
+export PIPENV_VENV_IN_PROJECT=1

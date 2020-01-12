@@ -404,6 +404,9 @@ let NERDTreeShowHidden=1
 let g:NERDSpaceDelims = 1         " Add spaces after comment delimiters by default
 let g:NERDDefaultAlign = 'left'   " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDCommentEmptyLines = 1   " Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCompactSexyComs = 1
+let g:NERDCustomDelimiters = {'sentinel': {'left': '#', 'leftAlt': '/*', 'rightAlt': '*/'}}
+let g:NERDCustomDelimiters = {'Jenkinsfile': {'left': '//'}}
 
 " ==================== Ag ====================
 let g:ackprg = 'ag --vimgrep --smart-case'
