@@ -21,6 +21,7 @@ alias reload="source $HOME/.zshrc"
 alias my_ip="ipconfig getifaddr en0" # Need to come up with a way to get ip address that works on both linux and mac os
 alias srv="python3 -m http.server \$1" # Simple, but awesome python http server; If you're working with a static http page, you can use this to serve it rather than viewing the file directly in the browser; The final parameter allows you to specifiy a port
 alias run_postgres='docker run --name postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres' # Runs a postgres docker container with un/pw = postgres and the default port exposed
+alias fdiff='diff --suppress-common-lines --minimal --side-by-side --ignore-all-space --color=always'
 
 ## Directory Aliases
 alias rs="cd $HOME/Documents/projects/receipt-service"
